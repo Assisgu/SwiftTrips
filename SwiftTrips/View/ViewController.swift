@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configuraTableView()
-        view.backgroundColor = UIColor.systemOrange
+        view.backgroundColor = UIColor.systemBrown
         if #available(iOS 15.0, *) {
             viagensTableView.sectionHeaderTopPadding = 0.0
         }
@@ -68,7 +68,7 @@ extension ViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 400
+        return UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.phone ? 400 : 430
     }
 }
 

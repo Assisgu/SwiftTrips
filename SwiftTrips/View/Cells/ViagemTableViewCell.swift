@@ -31,16 +31,16 @@ class ViagemTableViewCell: UITableViewCell {
         atributoString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, atributoString.length))
         precoSemDescontoLabel.attributedText = atributoString
         
-        if let numeroDeDias = viagem?.diaria, let numeroDeHospedes = viagem?.hospedes {
-            let diarias = numeroDeDias == 1 ? "Diária" : "Diárias"
-            let hospedes = numeroDeHospedes == 1 ? "Pessoa" : "Pessoas"
-            
-            diariaViagemLabel.text = "\(numeroDeDias) \(diarias) - \(numeroDeHospedes) \(hospedes)"
+        if  let numeroDeDias = viagem?.diaria,
+            let numeroDeHospedes = viagem?.hospedes {
+                let diarias = numeroDeDias == 1 ? "Diária" : "Diárias"
+                let hospedes = numeroDeHospedes == 1 ? "Pessoa" : "Pessoas"
+                
+                diariaViagemLabel.text = "\(numeroDeDias) \(diarias) - \(numeroDeHospedes) \(hospedes)"
         }
         
         DispatchQueue.main.async {
             self.backgroundViewCell.addSombra()
         }
     }
-    
 }
